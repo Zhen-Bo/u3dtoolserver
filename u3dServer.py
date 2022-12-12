@@ -20,7 +20,7 @@ def changeAssetByFile(bundle:io.BytesIO,assetFile:UploadFile) -> io.BytesIO:
     return io.BytesIO(u3dAsset.file.save())
 
 @app.post("/Nikke/Decrypt")
-async def decryptBundle(assetBundle: list[UploadFile]):
+async def decryptBundle(assetBundle: UploadFile):
     """Decrypt Encrypted Bundle
 
     Args:
@@ -43,7 +43,7 @@ async def decryptBundle(assetBundle: list[UploadFile]):
 
 
 @app.post("/Nikke/Encrypt")
-async def encryptBundle(assetBundle: list[UploadFile]):
+async def encryptBundle(assetBundle: UploadFile):
     """Encrypt Unencrypted Bundle
 
     Args:
